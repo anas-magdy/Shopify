@@ -6,8 +6,12 @@
     background-color: var(--color-light);
     top: 0px;
     right: -50%;
+    overflow-y: initial;
+    border-left: 1px solid var(--color-tertiary);
     transition: all ease-in-out 0.5s;
     z-index: 99999999999999999 !important;
+
+
 
     #closeIcon {
         position: absolute;
@@ -16,6 +20,33 @@
         padding: 10px;
         border-radius: 100%;
         background-color: var(--color-light-grey);
+    }
+
+    .items {
+        height: 100%;
+        background-color: var(--color-light);
+        overflow: hidden;
+
+        h2 {
+            padding: 10px;
+            color: var(--color-primary);
+        }
+
+        .cartItem {
+            border-bottom: 1px solid var(--color-primary);
+
+            .cartItem__image {
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .cart__description {}
+        }
+
+
+
     }
 }
 
@@ -42,6 +73,17 @@
 
 }
 
+.profile {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+}
+
+/* =====================nav=============== */
 
 .products {
     background-color: var(--color-light);
@@ -76,6 +118,8 @@
             margin: 0px 5px;
             top: 72px;
             z-index: 11;
+            background-color: var(--color-light);
+            padding: 5px 0px;
 
             span {
                 position: absolute;

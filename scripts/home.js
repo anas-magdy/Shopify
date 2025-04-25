@@ -4,7 +4,6 @@ let glopalProducts = [];
 glopalProducts = await productsInstance.getAllProducts()
    .then(products => {
       glopalProducts = products;
-      console.log("from anas", glopalProducts);
       renderData();
    });
 
@@ -17,7 +16,6 @@ closeIcon.addEventListener("click", (event) => {
    cartMenu.style.animation = 'cartHide 0.5s forwards';
    flagShow = false
 });
-
 cartIcon.addEventListener("click", () => {
    if (!flagShow) {
       cartMenu.style.animation = 'cartShow 0.5s forwards';
@@ -31,15 +29,33 @@ cartIcon.addEventListener("click", () => {
    }
 });
 
+let options = document.getElementById("categorySelection")
+var categories = await productsInstance.getAllCategories()
+categories.forEach((category) => {
+   let option = document.createElement("option")
+   option.value = category
+   option.innerHTML = category
+   options.appendChild(option)
+})
+document.getElementById("categorySelection").addEventListener("change", async (event) => {
+
+})
+
+
+
+
+
+
+
+
 document.getElementById("search").addEventListener("input", async (event) => {
-   document.getElementsByClassName('products-cards')[0].innerHTML = ''
    glopalProducts = await productsInstance.displayProducts(event.target.value);
+   document.getElementsByClassName('products-cards')[0].innerHTML = ''
    renderData();
 });
 
 function renderData() {
    for (let i = 0; i < glopalProducts.length; i++) {
-      console.log(glopalProducts[i])
       let card = document.createElement('div')
       card.className = 'p-3 col-xs-12 col-sm-6 col-md-4 col-lg-3'
       card.innerHTML = `

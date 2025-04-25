@@ -215,12 +215,17 @@ body:has(.home:target) .home-link::before {
     display: none;
 }
 
+
+#cart-icon {
+    font-size: 25px;
+    cursor: pointer;
+}
+
 .menu-icon {
-    font-size: 20px;
+    font-size: 25px;
     display: none;
 }
 
 .navbar .ul-links .close-icon {
     display: none;
 }
-

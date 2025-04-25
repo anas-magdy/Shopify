@@ -4,6 +4,9 @@
     .container {
         padding: 0 15px;
     }
+
+
+
 }
 
 @media screen and (min-width: 576px) {
@@ -16,6 +19,9 @@
     .container {
         max-width: 720px;
     }
+
+
+
 }
 
 @media screen and (min-width: 992px) {
@@ -23,12 +29,15 @@
         max-width: 960px;
     }
 
+
 }
 
 @media screen and (min-width: 1200px) {
     .container {
         max-width: 1140px;
     }
+
+
 }
 
 @media screen and (min-width: 1400px) {
@@ -116,21 +125,23 @@
 }
 
 @media (max-width: 768px) {
-    
+
     .footer .container {
         flex-direction: column;
-        padding:40px 30px;
+        padding: 40px 30px;
     }
 
     .footer .about,
     .footer .contact-details,
-    .footer .subscribe{
+    .footer .subscribe {
         width: 100%;
         order: 0;
     }
+
     .footer .subscribe-box {
         flex-direction: column;
     }
+
     .footer .subscribe-box .btn {
         width: 100%;
         max-width: 100%;
