@@ -1,0 +1,141 @@
+/* ==============> container <================== */
+
+@media screen and (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* ==============> navbar <================== */
+
+@media screen and (max-width:1200px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar .ul-links {
+        position: absolute;
+        background-color: var(--color-light);
+        flex-direction: column;
+        width: 350px;
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding-inline: 10px;
+        gap: 0;
+        transform: translateX(100%);
+
+    }
+
+    .ul-links li {
+        padding-block: 20px;
+    }
+
+    .navbar .ul-links .close-icon {
+        display: block;
+        text-align: end;
+        padding-right: 20px;
+    }
+
+    .navbar .ul-links .close-icon i {
+        font-size: 20px;
+    }
+
+    .mode {
+        margin-left: auto;
+        padding-right: 10px;
+    }
+
+    .ul-links li a:hover::before {
+        width: 0;
+    }
+
+
+
+}
+
+
+/* ==============>chefs section<========== */
+
+
+
+
+
+/* =============> footer section<====================== */
+
+@media screen and (max-width: 1200px) {
+
+    .footer .about,
+    .footer .contact-details {
+        width: calc(calc(100% - var(--gap)) /2);
+    }
+
+    .footer .about {
+        order: 1;
+    }
+
+    .footer .contact-details {
+        order: 2;
+    }
+
+    .footer .subscribe {
+        width: 100%;
+        order: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .footer .container {
+        flex-direction: column;
+        padding:40px 30px;
+    }
+
+    .footer .about,
+    .footer .contact-details,
+    .footer .subscribe{
+        width: 100%;
+        order: 0;
+    }
+    .footer .subscribe-box {
+        flex-direction: column;
+    }
+    .footer .subscribe-box .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+
+}

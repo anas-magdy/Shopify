@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/entryPoint.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <section class="image">
+            <div class="imageContainer">
+                <p>Click. Shop. Smile.</p>
+                <p>Indulge in Excellence</p>
+            </div>
+            <img src="../images/entryPoint.jpg" alt=""> 
+        </section>
+        <section class="content">
+            <h2>Sign Up</h2>
+            <form action="#">
+                <input type="text" name="user_name" class="user_name" placeholder="Name"/>
+                <span class="errorMessage nameError">Please enter name conatin your first name and last name </span>
+                <input type="email" name="email" class="email" placeholder="email"/>
+                <span class="errorMessage emailError">Please enter a valide Email</span>
+                <input type="text" name="password" class="password" placeholder="password">
+                <span class="errorMessage passwordError">password at least 8 char contain spicial char ubercase and numbers</span>
+                <input type="text" name="confirm_pasword" class="confirm_pasword" placeholder=" comnfirm pasword"/>
+                <span class="errorMessage confirmPasswordError">password not match</span>
+                <button type="submit" class="signUp-btn">Regester</button>
+                <span class="errorMessage enterdata">enter your data ..</span>
+                <span class="errorMessage emailExists">email already exists try log in </span>
+                <button type= "button" class="to-login-btn">Log In </button>
+            </form>
+        </section>
+    </section>
+
+    <script src="../scripts/regestration.js" type="module"></script>
+</body>
+</html>
