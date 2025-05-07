@@ -149,4 +149,40 @@
 
 
 
+    #cart-menu {
+        width: 75%;
+        right: -75%;
+    }
+
+    .btn-order {
+        position: relative;
+        left: 40%;
+    }
+
+
+    @keyframes cartShow {
+        0% {
+            position: relative;
+            right: -75%;
+        }
+
+        100% {
+            right: 0%;
+        }
+
+    }
+
+    @keyframes cartHide {
+        0% {
+            right: 0%;
+        }
+
+        100% {
+            right: -75%;
+        }
+
+    }
+
+
+
 }

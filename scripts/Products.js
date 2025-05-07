@@ -1,7 +1,7 @@
 export class Products {
   static products = null;
   static isLoaded = false;
-
+  static displayedProducts
   cat = [];
 
   constructor() {
@@ -20,6 +20,7 @@ export class Products {
 
   async getAllProducts() {
     await Products.ensureLoaded();
+    Products.displayedProducts = Products.products;
     return Products.products;
   }
 
@@ -36,14 +37,15 @@ export class Products {
     return this.cat;
   }
   async getByCategory(category) {
-    let res = await fetch('https://dummyjson.com/products/category/smartphones')
-    let data = res.json()
-      .then(console.log);
+    let res = await fetch('https://dummyjson.com/products/category/' + category);
+    let data = await res.json()
+    Products.displayedProducts = data.products
+    return Products.displayedProducts
   }
 
   async displayProducts(searchStr) {
     await Products.ensureLoaded();
-    return Products.products.filter((product) =>
+    return Products.displayedProducts.filter((product) =>
       product.title.toLowerCase().includes(searchStr.toLowerCase().trim())
     );
   }

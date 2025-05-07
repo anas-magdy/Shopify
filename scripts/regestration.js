@@ -73,7 +73,8 @@ function switchToLogin(){
             });
 }
 function checkAuthintication(email,password,err){
-if(User.checkAuthentication(email,password)){
+    if (User.checkAuthentication(email, password)) {
+        localStorage.setItem('email', JSON.stringify({email,password}))
     window.location.href = "http://127.0.0.1:5500/pages/home.html";
 }else{
     err.style.display='block'

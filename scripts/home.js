@@ -1,33 +1,17 @@
 import { Products } from "./Products.js";
 const productsInstance = new Products();
 let glopalProducts = [];
+let user = JSON.parse(localStorage.getItem('email'))
+if (!user) {
+   window.location.href = "http://127.0.0.1:5500/pages/entryPoint.html"
+}
 glopalProducts = await productsInstance.getAllProducts()
    .then(products => {
       glopalProducts = products;
       renderData();
    });
 
-let flagShow = false
-let cartMenu = document.getElementById("cart-menu");
-let cartIcon = document.getElementById("cart-icon");
-let closeIcon = document.getElementById("closeIcon");
-closeIcon.addEventListener("click", (event) => {
-   event.stopPropagation()
-   cartMenu.style.animation = 'cartHide 0.5s forwards';
-   flagShow = false
-});
-cartIcon.addEventListener("click", () => {
-   if (!flagShow) {
-      cartMenu.style.animation = 'cartShow 0.5s forwards';
-      flagShow = true
-      return
-   }
-   else {
-      cartMenu.style.animation = 'cartHide 0.5s forwards';
-      flagShow = false
-      return
-   }
-});
+
 
 let options = document.getElementById("categorySelection")
 var categories = await productsInstance.getAllCategories()
@@ -38,15 +22,23 @@ categories.forEach((category) => {
    options.appendChild(option)
 })
 document.getElementById("categorySelection").addEventListener("change", async (event) => {
+   document.getElementById("search").value = ''
+   let selectedCategory = event.target.value
+   window.location.href = '#products'
+   if (selectedCategory == "All") {
+      glopalProducts = await productsInstance.getAllProducts()
+      document.getElementsByClassName('products-cards')[0].innerHTML = ''
+      renderData()
+      return
+   } else {
+      glopalProducts = await productsInstance.getByCategory(selectedCategory)
+      document.getElementsByClassName('products-cards')[0].innerHTML = ''
+      renderData()
+      console.log(glopalProducts)
+   }
+
 
 })
-
-
-
-
-
-
-
 
 document.getElementById("search").addEventListener("input", async (event) => {
    glopalProducts = await productsInstance.displayProducts(event.target.value);
